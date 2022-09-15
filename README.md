@@ -1,11 +1,11 @@
 ## SSH Daemon (CentOS 8 & Supervisord Golang)
 
-[![GitHub Open Issues](https://img.shields.io/github/issues/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh/issues)
-[![GitHub Stars](https://img.shields.io/github/stars/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh)
-[![GitHub Forks](https://img.shields.io/github/forks/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh)
-[![Stars on Docker Hub](https://img.shields.io/docker/stars/million12/ssh.svg)](https://hub.docker.com/r/million12/ssh)
-[![Pulls on Docker Hub](https://img.shields.io/docker/pulls/million12/ssh.svg)](https://hub.docker.com/r/million12/ssh)
-[![](https://images.microbadger.com/badges/image/million12/ssh.svg)](http://microbadger.com/images/million12/ssh)
+[![GitHub Open Issues](https://img.shields.io/github/issues/jniltinho/docker-ssh.svg)](https://github.com/jniltinho/docker-ssh/issues)
+[![GitHub Stars](https://img.shields.io/github/stars/jniltinho/docker-ssh.svg)](https://github.com/jniltinho/docker-ssh)
+[![GitHub Forks](https://img.shields.io/github/forks/jniltinho/docker-ssh.svg)](https://github.com/jniltinho/docker-ssh)
+[![Stars on Docker Hub](https://img.shields.io/docker/stars/jniltinho/docker-ssh.svg)](https://hub.docker.com/r/jniltinho/docker-ssh)
+[![Pulls on Docker Hub](https://img.shields.io/docker/pulls/jniltinho/docker-ssh.svg)](https://hub.docker.com/r/jniltinho/docker-ssh)
+
 
 
 Docker image with SSHD running under CentOS 8 and Supervisor.
