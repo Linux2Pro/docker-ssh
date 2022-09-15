@@ -8,14 +8,14 @@
 [![](https://images.microbadger.com/badges/image/million12/ssh.svg)](http://microbadger.com/images/million12/ssh)
 
 
-[million12/ssh](https://registry.hub.docker.com/u/million12/ssh/) docker image with SSHD running under CentOS 8 and Supervisor.
+Docker image with SSHD running under CentOS 8 and Supervisor.
 
 #### Usage
 to be able to connect user can provide port and password for `root` user. Please see examples below.
 
 Example:
 
-	docker run -d --name ssh -p 10022:22 million12/ssh
+	docker run -d --name ssh -p 10022:22 jniltinho/docker-ssh
 
 **if `root` passoword is not provided image will generate one and it can be retrived from logs**
 
@@ -35,7 +35,7 @@ Login using that password:
 
 Example:
 
-	docker run -d --name ssh -p 10022:22 --env="ROOT_PASS=my_pass" million12/ssh
+	docker run -d --name ssh -p 10022:22 --env="ROOT_PASS=my_pass" jniltinho/docker-ssh
 
 ### Docker troubleshooting
 
@@ -59,7 +59,7 @@ Sometimes you might just want to review how things are deployed inside a running
 
 History of an image and size of layers:
 
-    docker history --no-trunc=true million12/ssh | tr -s ' ' | tail -n+2 | awk -F " ago " '{print $2}'
+    docker history --no-trunc=true jniltinho/docker-ssh |tr -s ' '|tail -n+2|awk -F " ago " '{print $2}'
 
 ---
 ## Author
