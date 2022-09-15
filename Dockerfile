@@ -10,6 +10,7 @@ RUN rpm --rebuilddb && yum clean all; yum install -y epel-release; yum update -y
   yum install --nogpgcheck -y python3-pip which telnet ncurses pwgen && \
   yum clean all && rm -rf /tmp/yum*
 
+## https://github.com/ochinchina/supervisord
 COPY --from=ochinchina/supervisord:latest /usr/local/bin/supervisord /usr/local/bin/supervisord
 
 RUN yum install --nogpgcheck -y openssh-server openssh-clients \
