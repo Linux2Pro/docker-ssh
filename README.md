@@ -61,6 +61,16 @@ History of an image and size of layers:
 
     docker history --no-trunc=true jniltinho/docker-ssh |tr -s ' '|tail -n+2|awk -F " ago " '{print $2}'
 
+
+# Build Docker
+
+If you want to build these images by yourself, please follow below commands.
+
+```
+git clone https://github.com/jniltinho/docker-ssh.git
+docker build --no-cache -t docker-ssh .
+```
+
 ---
 ## Author
 
