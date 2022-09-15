@@ -5,7 +5,7 @@ ENV ROOT_PASS=password
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
     && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
-RUN rpm --rebuilddb; yum clean all; yum install -y epel-release; yum update -y \
+RUN yum clean all; yum install -y epel-release; yum update -y \
     && yum install --nogpgcheck -y which telnet ncurses pwgen net-tools wget curl \
     && yum clean all && rm -rf /tmp/yum*
 
