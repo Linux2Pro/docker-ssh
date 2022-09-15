@@ -69,7 +69,7 @@ If you want to build these images by yourself, please follow below commands.
 ```
 git clone https://github.com/jniltinho/docker-ssh.git
 cd docker-ssh
-docker build --no-cache -t docker-ssh .
+docker build --no-cache -t jniltinho/docker-ssh .
 ```
 
 ---
