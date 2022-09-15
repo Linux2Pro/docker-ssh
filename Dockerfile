@@ -1,5 +1,6 @@
 FROM centos:8
 
+ENV TZ America/Sao_Paulo
 ENV ROOT_PASS=password
 
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
