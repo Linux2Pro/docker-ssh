@@ -17,7 +17,7 @@ log() {
 }
 # Generate password for root
 if [ ${ROOT_PASS} == password ]; then
-    ROOT_PASS=$(pwgen -c -n -1 16)
+    ROOT_PASS=$(pwgen -c 1 -l 16)
 fi
 echo "root:${ROOT_PASS}" | chpasswd
 log "root password set to: ${white}${bold}$ROOT_PASS${reset}"
