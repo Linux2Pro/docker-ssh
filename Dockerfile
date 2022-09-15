@@ -6,15 +6,15 @@ ENV ROOT_PASS=password
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* \
     && sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 
-RUN yum clean all; yum install -y epel-release; yum update -y \
-    && yum install --nogpgcheck -y which telnet ncurses pwgen net-tools wget curl \
+RUN yum clean all; yum update -y \
+    && yum install --nogpgcheck -y which telnet ncurses net-tools wget curl \
     && yum clean all && rm -rf /tmp/yum*
 
 ## https://github.com/ochinchina/supervisord
 COPY --from=ochinchina/supervisord:latest /usr/local/bin/supervisord /usr/local/bin/supervisord
 
 RUN yum install --nogpgcheck -y openssh-server openssh-clients sudo hostname \
-    && yum clean all \
+    && yum clean all && rm -rf /tmp/yum* \
     && ssh-keygen -q -b 1024 -N '' -t rsa -f /etc/ssh/ssh_host_rsa_key \
     && ssh-keygen -q -b 1024 -N '' -t dsa -f /etc/ssh/ssh_host_dsa_key \
     && ssh-keygen -q -b 521 -N '' -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key \
@@ -25,6 +25,11 @@ RUN yum install --nogpgcheck -y openssh-server openssh-clients sudo hostname \
 RUN curl -skLO https://github.com/upx/upx/releases/download/v3.96/upx-3.96-amd64_linux.tar.xz \
     && tar -xf upx-*.tar.xz; mv upx-*/upx /usr/local/bin/; rm -rf upx-3.* \
     && upx --best --lzma /usr/local/bin/supervisord
+    
+RUN curl -skLO https://github.com/girigiribauer/go-pwgen/releases/download/v0.2.1/pw-linux-amd64.tar.gz \
+    && tar -xf pw-linux-amd64.tar.gz; mv pw /usr/local/bin/pwgen; rm -f pw-linux-amd64.tar.gz \
+    && upx --best --lzma /usr/local/bin/pwgen    
+
 
 EXPOSE 9001 22
 
