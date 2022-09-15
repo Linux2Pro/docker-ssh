@@ -1,6 +1,5 @@
-#SSH Daemon (CentOS 7 & Supervisor)
+#SSH Daemon (CentOS 8 & Supervisord Golang)
 
-[![CircleCI Build Status](https://img.shields.io/circleci/project/million12/docker-ssh/master.svg)](https://circleci.com/gh/million12/docker-ssh)
 [![GitHub Open Issues](https://img.shields.io/github/issues/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh)
 [![GitHub Forks](https://img.shields.io/github/forks/million12/docker-ssh.svg)](https://github.com/million12/docker-ssh)
@@ -9,18 +8,14 @@
 [![](https://images.microbadger.com/badges/image/million12/ssh.svg)](http://microbadger.com/images/million12/ssh)
 
 
-[million12/ssh](https://registry.hub.docker.com/u/million12/ssh/) docker image with SSHD running under CentOS 7 and Supervisor.
+[million12/ssh](https://registry.hub.docker.com/u/million12/ssh/) docker image with SSHD running under CentOS 8 and Supervisor.
 
 #### Usage
 to be able to connect user can provide port and password for `root` user. Please see examples below.
 
 Example:
 
-	docker run \
-		-d \
-		--name ssh \
-		-p 10022:22 \
-		million12/ssh
+	docker run -d --name ssh -p 10022:22 million12/ssh
 
 **if `root` passoword is not provided image will generate one and it can be retrived from logs**
 
@@ -40,12 +35,7 @@ Login using that password:
 
 Example:
 
-	docker run \
-		-d \
-		--name ssh \
-		-p 10022:22 \
-		--env="ROOT_PASS=my_pass" \
-		million12/ssh
+	docker run -d --name ssh -p 10022:22 --env="ROOT_PASS=my_pass" million12/ssh
 
 ### Docker troubleshooting
 
@@ -74,7 +64,7 @@ History of an image and size of layers:
 ---
 ## Author
 
-Author: Przemyslaw Ozgo (<linux@ozgo.info>)
+Author: Nilton Oliveira
 
 ---
 
