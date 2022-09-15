@@ -24,7 +24,7 @@ Example:
 
 Login using that password:
 
-    ssh root@docker.io -p 10022
+    ssh root@localhost -p10022
     root@docker.ip's password: ota7zohsh0AZu2Ex
 
 #### Environmental Variable
