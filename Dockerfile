@@ -1,7 +1,6 @@
 #FROM centos:centos7
 FROM centos:8
 
-ENV SUPERVISOR_VERSION=4.2.4
 ENV ROOT_PASS=password
 
 RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* ; \
@@ -9,8 +8,9 @@ RUN sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-* ; \
 
 RUN rpm --rebuilddb && yum clean all; yum install -y epel-release; yum update -y; \
   yum install --nogpgcheck -y python3-pip which telnet ncurses pwgen && \
-  yum clean all && rm -rf /tmp/yum*; pip3 install supervisor==${SUPERVISOR_VERSION}
+  yum clean all && rm -rf /tmp/yum*
 
+COPY --from=ochinchina/supervisord:latest /usr/local/bin/supervisord /usr/local/bin/supervisord
 
 RUN yum install --nogpgcheck -y openssh-server openssh-clients \
   sudo hostname wget curl && yum clean all && \
