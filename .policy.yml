@@ -7,3 +7,9 @@ approval_rules:
     requires:
       count: 1
       users: ["t8rafa", "mathmed"]
+
+
+options:
+  request_review:
+    enabled: true
+    mode: all-users|random-users|teams
