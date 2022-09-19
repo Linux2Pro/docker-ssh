@@ -5,5 +5,5 @@ policy:
 approval_rules:
   - name: one approval from JNILTINHO
     requires:
-      count: 1
+      count: 2
       users: ["t8rafa", "mathmed"]
