@@ -1,0 +1,9 @@
+policy:
+  approval:
+    - one approval from JNILTINHO
+
+approval_rules:
+  - name: one approval from JNILTINHO
+    requires:
+      count: 1
+      users: ["t8rafa", "mathmed"]
