@@ -5,5 +5,8 @@ policy:
 approval_rules:
   - name: Admins approved
     requires:
-      count: 3
-      users: ["t8rafa", "atar-admin", "mathmed", "jniltinho"]
+      count: 1
+      users: ["t8rafa"]
+    options:
+      methods:
+        github_review: false
