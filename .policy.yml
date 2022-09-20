@@ -1,13 +1,16 @@
 policy:
   approval:
-    - and:
-        - Admins approved
+    - or:
+      - Admins approved
+  disapproval:
+    requires:
+      organizations: ["Linux2Pro"]
 
 approval_rules:
   - name: Admins approved
     requires:
       count: 1
-      users: ["t8rafa"]
+      users: ["t8rafa", "jniltinho"]
     options:
       methods:
         github_review: false
