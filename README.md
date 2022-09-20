@@ -1,4 +1,4 @@
-## SSH Daemon (CentOS 8 + Supervisord Golang)
+## SSH Daemon (CentOS 8 & Supervisord Golang) LLLL
 
 [![GitHub Open Issues](https://img.shields.io/github/issues/jniltinho/docker-ssh.svg)](https://github.com/jniltinho/docker-ssh/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/jniltinho/docker-ssh.svg)](https://github.com/jniltinho/docker-ssh)
