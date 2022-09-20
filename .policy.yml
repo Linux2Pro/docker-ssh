@@ -1,7 +1,6 @@
 policy:
   approval:
-    - or:
-        - Admins approved
+    - Admins approved
 
 approval_rules:
   - name: Admins approved
