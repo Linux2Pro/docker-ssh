@@ -9,7 +9,7 @@ policy:
 approval_rules:
   - name: Admins approved
     requires:
-      count: 1
+      count: 2
       users: ["t8rafa", "jniltinho"]
     options:
       methods:
