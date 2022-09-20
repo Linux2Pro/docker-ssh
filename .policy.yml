@@ -1,18 +1,10 @@
-
-options:
-  request_review:
-    enabled: true
-
 policy:
   approval:
-  - the devtools team has approved
-
-  disapproval:
-    requires:
-      organizations: ["LinuxPro"]
+    - or:
+        - Admins approved
 
 approval_rules:
-- name: the devtools team has approved
-  requires:
-    count: 1
-    users: ["t8rafa"]
+  - name: Admins approved
+    requires:
+      count: 1
+      users: ["t8rafa"]
