@@ -5,5 +5,5 @@ policy:
 approval_rules:
   - name: Admins approved
     requires:
-      count: 1
-      users: ["t8rafa"]
+      count: 3
+      users: ["t8rafa", "atar-admin", "mathmed", "jniltinho"]
