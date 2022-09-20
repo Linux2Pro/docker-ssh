@@ -1,6 +1,6 @@
 policy:
   approval:
-    - if:
+    - and:
         - Admins approved
 
 approval_rules:
