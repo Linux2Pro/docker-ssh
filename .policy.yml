@@ -4,8 +4,7 @@ policy:
 
   disapproval:
     requires:
-      organization:
-      - "Linux2Pro"
+      organizations: ["LinuxPro"]
 
 approval_rules:
 - name: the devtools team has approved
