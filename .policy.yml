@@ -1,12 +1,14 @@
-policy:
-  approval:
-    - Admins approved
+## Create this file on root repo "name = .policy.yml"
 
-approval_rules:
-  - name: Admins approved
-    if:
-      targets_branch:
-        pattern: "^main$"
-    requires:
-      count: 1
-      users: ["t8rafa"]
+# The remote repository to read the policy file from. This is required, and must
+# be in the form of "org/repo-name". The policy bot github app must have read
+# access to this repository.
+remote: Linux2Pro/github-rules
+
+# The path to the policy config file in the remote repository. If none is
+# specified, the default path in the server config is used.
+path: rules/policy.yml
+
+# The branch (or tag, or commit hash) that should be used on the remote
+# repository. If none is specified, the default branch of the repository is used.
+ref: main
